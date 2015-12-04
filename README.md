@@ -27,7 +27,7 @@ Download a <a href="https://github.com/prever-apps/prever-apps-monitor-mysqlmari
 
 ###### Linux ######
 ``` 
-wget https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/mysqlmariadb.tar
+wget https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.tar
 tar -xvf prever-apps-monitor-mysqlmariadb.tar
 ``` 
 ##### Step 2: Configure prever.properties file #####
