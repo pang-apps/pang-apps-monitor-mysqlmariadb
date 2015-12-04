@@ -1,5 +1,5 @@
 # prever-apps-monitor-mysqlmariadb
-Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second, And more.
+Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second and more.
 You can monitor and access your database using prever.io cloud web service on mobile, tablet and Laptop anywhere.
 
 ## Screen shot
