@@ -1,11 +1,13 @@
 # prever-apps-monitor-mysqlmariadb
-Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second, And more.
-
-You can monitor using your mobile phone or tablet any devices.
+Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second and more.
+You can monitor and access your database using prever.io cloud web service on mobile, tablet and Laptop anywhere.
 
 ## Screen shot
 ###### Realtime monitoring ######
 ![Realtime monitoring](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
+
+###### Realtime monitoring on Mobile ######
+![Mobile](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png "Realtime monitoring")
 
 ## Getting Started
 #### Sign up for Prever.io ####
@@ -21,12 +23,12 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/prever-apps/prever-apps-monitor-web/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever web server monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/prever-apps/prever-apps-monitor-web/releases/download/1.0/mysqlmariadb.tar
-tar -xvf prever-apps-monitor-web.tar
+wget https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.tar
+tar -xvf prever-apps-monitor-mysqlmariadb.tar
 ``` 
 ##### Step 2: Configure prever.properties file #####
 cd prever-apps-monitor-mysqlmariadb/conf
@@ -36,6 +38,15 @@ Confgiure your account and user key in prever.properties.
 prever.username=your username in prever.io
 prever.userkey=your user key in prever.io
 ``` 
+
+Confgiure database connection properties
+```bash
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost
+jdbc.username=username
+jdbc.password=password
+``` 
+
 Declare your status variable.
 ```bash
 #If MySQL is frequently accessing the first row of a table index, it suggests that it is performing a sequential scan of the entire index. This indicates that the corresponding table is not properly indexed.
