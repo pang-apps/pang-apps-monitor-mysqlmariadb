@@ -1,0 +1,50 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.5
+compileJava.options.encoding = 'UTF-8'
+
+eclipse {
+	classpath {
+		downloadSources = true
+		downloadJavadoc = true
+	}
+}
+
+ext {
+	preverVersion='1.0.0-SNAPSHOT'
+}
+
+configurations.all {
+	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+	
+repositories {
+   mavenLocal()
+   mavenCentral()
+   maven{
+   	url "http://mini.prever.co.kr:8081/nexus/content/groups/prever-io-public-repository/"
+   }
+}
+
+dependencies {
+	compile group: "org.slf4j", name: "slf4j-api", version: "1.7.5" 
+	compile group: "ch.qos.logback", name: "logback-core", version: "1.1.2"
+	compile group: "ch.qos.logback", name: "logback-classic", version: "1.1.2"
+	
+	compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+	
+	compile ("mysql:mysql-connector-java:5.1.36")
+	
+	compile group: 'io.prever', name: 'prever-sdk-java', version: '1.0.0-SNAPSHOT'
+	
+	testCompile 'junit:junit:4.11'
+}
+
+version = '1.0.0-SNAPSHOT'
+
+jar {
+    manifest.attributes provider: 'prever.io'
+}
+

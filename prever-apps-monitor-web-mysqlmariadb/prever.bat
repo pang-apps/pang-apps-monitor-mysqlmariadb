@@ -1,0 +1,1 @@
+java -cp ./libs/*;./conf io.prever.apps.monitor.MysqlMariaDBMonitor
