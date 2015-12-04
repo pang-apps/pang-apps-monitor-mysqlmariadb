@@ -16,3 +16,7 @@ hs_err_pid*
 .classpath
 .settings
 .gradle
+logs/prever.log
+prever/logs/prever.log
+prever-apps-monitor-web-mysqlmariadb.tar
+prever-apps-monitor-web-mysqlmariadb.zip
