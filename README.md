@@ -1,11 +1,14 @@
 # prever-apps-monitor-mysqlmariadb
 Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second, And more.
 
-You can monitor using your mobile phone or tablet any devices.
 
 ## Screen shot
 ###### Realtime monitoring ######
 ![Realtime monitoring](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
+
+###### Realtime monitoring ######
+You can monitor using your mobile phone or tablet any devices.
+![Realtime monitoring](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png "Realtime monitoring")
 
 ## Getting Started
 #### Sign up for Prever.io ####
