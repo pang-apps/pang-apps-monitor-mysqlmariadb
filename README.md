@@ -38,6 +38,15 @@ Confgiure your account and user key in prever.properties.
 prever.username=your username in prever.io
 prever.userkey=your user key in prever.io
 ``` 
+
+Confgiure database connection properties
+```bash
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost
+jdbc.username=username
+jdbc.password=password
+``` 
+
 Declare your status variable.
 ```bash
 #If MySQL is frequently accessing the first row of a table index, it suggests that it is performing a sequential scan of the entire index. This indicates that the corresponding table is not properly indexed.
