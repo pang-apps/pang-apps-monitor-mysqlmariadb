@@ -23,11 +23,11 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/prever-apps/prever-apps-monitor-web/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/prever-apps/prever-apps-monitor-web/releases/download/1.0/mysqlmariadb.tar
+wget https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/mysqlmariadb.tar
 tar -xvf prever-apps-monitor-web.tar
 ``` 
 ##### Step 2: Configure prever.properties file #####
