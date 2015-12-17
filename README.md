@@ -4,10 +4,10 @@ You can monitor and access your database using prever.io cloud web service on mo
 
 ## Screen shot
 ###### Realtime monitoring ######
-![Realtime monitoring](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
+![Realtime monitoring](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
 
 ###### Realtime monitoring on Mobile ######
-![Mobile](https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png "Realtime monitoring")
+![Mobile](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png "Realtime monitoring")
 
 ## Getting Started
 #### Sign up for Prever.io ####
@@ -23,11 +23,11 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/prever-apps/prever-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.tar
+wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.tar
 tar -xvf prever-apps-monitor-mysqlmariadb.tar
 ``` 
 ##### Step 2: Configure prever.properties file #####
