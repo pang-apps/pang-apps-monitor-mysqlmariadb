@@ -10,6 +10,6 @@ JMX="$JMX -Dcom.sun.management.jmxremote.authenticate=false"
 JMX="$JMX -Dcom.sun.management.jmxremote.ssl=false"
 
 #To enable JMX
-#nohup $JMX java -cp ./libs/*:./conf io.prever.apps.monitor.MysqlMariaDBMonitor > /dev/null 2>&1&
+#nohup $JMX java -cp ./libs/*:./conf com.pangdata.apps.monitor.MysqlMariaDBMonitor > /dev/null 2>&1&
 
-nohup java -cp ./libs/*:./conf io.prever.apps.monitor.MysqlMariaDBMonitor > /dev/null 2>&1&
+nohup java -cp ./libs/*:./conf com.pangdata.apps.monitor.MysqlMariaDBMonitor > /dev/null 2>&1&

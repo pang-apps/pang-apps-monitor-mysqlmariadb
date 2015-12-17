@@ -1,6 +1,6 @@
-# prever-apps-monitor-mysqlmariadb
+# pang-apps-monitor-mysqlmariadb
 Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second and more.
-You can monitor and access your database using prever.io cloud web service on mobile, tablet and Laptop anywhere.
+You can monitor and access your database using pangdata.com cloud web service on mobile, tablet and Laptop anywhere.
 
 ## Screen shot
 ###### Realtime monitoring ######
@@ -10,9 +10,9 @@ You can monitor and access your database using prever.io cloud web service on mo
 ![Mobile](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png "Realtime monitoring")
 
 ## Getting Started
-#### Sign up for Prever.io ####
-Before you begin, you need an Prever.io account. 
-Please visit <a href="http://prever.io" target="_blank">http://prever.io</a> and create an account and retrieve your user key in user profile.
+#### Sign up for Pangdata.com ####
+Before you begin, you need an Pangdata.com account. 
+Please visit <a href="http://pangdata.com" target="_blank">http://pangdata.com</a> and create an account and retrieve your user key in user profile.
 
 #### Minimum requirements ####
 To run the application you will need **Java 1.5+**.
@@ -23,20 +23,20 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.zip">Prever mysql/mariadb monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/pang-apps-monitor-mysqlmariadb.zip">Pang Data mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/prever-apps-monitor-mysqlmariadb.tar
-tar -xvf prever-apps-monitor-mysqlmariadb.tar
+wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0/pang-apps-monitor-mysqlmariadb.tar
+tar -xvf pang-apps-monitor-mysqlmariadb.tar
 ``` 
-##### Step 2: Configure prever.properties file #####
-cd prever-apps-monitor-mysqlmariadb/conf
+##### Step 2: Configure pang.properties file #####
+cd pang-apps-monitor-mysqlmariadb/conf
 
-Confgiure your account and user key in prever.properties.
+Confgiure your account and user key in pang.properties.
 ```bash
-prever.username=your username in prever.io
-prever.userkey=your user key in prever.io
+pang.username=your username in pangdata.com
+pang.userkey=your user key in pangdata.com
 ``` 
 
 Confgiure database connection properties
@@ -83,18 +83,18 @@ status.writes_per_second = true
 status.reads_per_second = true
 ``` 
 
-Note: User key can be found in your profile of Prever.io
+Note: User key can be found in your profile of Pangdata.com
 ##### Step 3: Run #####
 ###### Windows ######
 ``` 
-prever/prever.bat
+pang-apps-monitor-mysqlmariadb/pang.bat
 ``` 
 ###### Linux ######
 ``` 
-prever/./prever.sh
+pang-apps-monitor-mysqlmariadb/pang.sh
 ``` 
 ##### Step 4: Access your devices #####
-Register your device in Prever.io
+Register your device in Pangdata.com
 
 Login your account.
 See main dashborad and you can find unregistered device.

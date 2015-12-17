@@ -1,8 +1,8 @@
 <configuration scan="true" scanPeriod="1 minutes">
  	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>./logs/prever.log</file>        
+        <file>./logs/pang.log</file>        
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>./logs/prever.%i.log</fileNamePattern>
+            <fileNamePattern>./logs/pang.%i.log</fileNamePattern>
 	            <minIndex>1</minIndex>
 	            <maxIndex>21</maxIndex>
             </rollingPolicy>

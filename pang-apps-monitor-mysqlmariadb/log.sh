@@ -1,1 +1,1 @@
-tail -f ./logs/prever.log
+tail -f ./logs/pang.log
