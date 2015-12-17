@@ -19,11 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package io.prever.apps.monitor;
-
-import io.prever.sdk.Prever;
-import io.prever.sdk.http.PreverHttp;
-import io.prever.sdk.util.PreverProperties;
+package com.pangdata.apps.monitor;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -42,6 +38,10 @@ import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.pangdata.sdk.Pang;
+import com.pangdata.sdk.http.PangHttp;
+import com.pangdata.sdk.util.PangProperties;
 
 // http://www.fromdual.com/innodb-variables-and-status-explained
 // http://dba.stackexchange.com/questions/56494/making-sense-of-innodb-buffer-pool-stats
@@ -77,13 +77,13 @@ public class MysqlMariaDBMonitor {
   private static Statement stmt = null;
 
   public static void main(String[] args) throws Exception {
-    // Prever must be initialized first to use prever.properties by PreverProperties
-    final Prever prever = new PreverHttp();
+    // Prever must be initialized first to use prever.properties by PangProperties
+    final Pang prever = new PangHttp();
 
-    JDBC_DRIVER = (String) PreverProperties.getProperty("jdbc.driverClassName");
-    DB_URL = (String) PreverProperties.getProperty("jdbc.url");
-    USER = (String) PreverProperties.getProperty("jdbc.username");
-    PASS = (String) PreverProperties.getProperty("jdbc.password");
+    JDBC_DRIVER = (String) PangProperties.getProperty("jdbc.driverClassName");
+    DB_URL = (String) PangProperties.getProperty("jdbc.url");
+    USER = (String) PangProperties.getProperty("jdbc.username");
+    PASS = (String) PangProperties.getProperty("jdbc.password");
 
     final Map<String, String> fields = extractFields();
 
@@ -96,7 +96,7 @@ public class MysqlMariaDBMonitor {
 
     getConn();
 
-    long period = PreverProperties.getPeriod();
+    long period = PangProperties.getPeriod();
     Timer timer = new Timer();
     timer.schedule(new TimerTask() {
       @Override
@@ -203,7 +203,7 @@ public class MysqlMariaDBMonitor {
   }
 
   private static Map<String, String> extractFields() {
-    Properties properties = PreverProperties.getProperties();
+    Properties properties = PangProperties.getProperties();
     Set<Entry<Object, Object>> entrySet = properties.entrySet();
     Iterator<Entry<Object, Object>> iterator = entrySet.iterator();
 
