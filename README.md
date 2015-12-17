@@ -1,4 +1,4 @@
-# pang-apps-monitor-mysqlmariadb
+# Monitoring your mysql and mariadb database on mobile where ever you are.
 Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second and more.
 You can monitor and access your database using pangdata.com cloud web service on mobile, tablet and Laptop anywhere.
 
@@ -23,11 +23,11 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.2/pang-apps-monitor-mysqlmariadb.zip">Pang Data mysql/mariadb monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.3/pang-apps-monitor-mysqlmariadb.zip">Pang Data mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.2/pang-apps-monitor-mysqlmariadb.tar
+wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.3/pang-apps-monitor-mysqlmariadb.tar
 tar -xvf pang-apps-monitor-mysqlmariadb.tar
 ``` 
 ##### Step 2: Configure pang.properties file #####
