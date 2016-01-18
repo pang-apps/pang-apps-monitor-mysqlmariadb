@@ -312,7 +312,7 @@ public class MysqlMariaDBMonitor {
       initVariables();
     }
     } catch (Exception e) {
-      logger.error("Error", e);
+      logger.error("Connect error occured", e);
       throw e;
     }
 
