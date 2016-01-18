@@ -304,11 +304,16 @@ public class MysqlMariaDBMonitor {
     }
   }
 
-  private static Connection getConn() throws ClassNotFoundException, SQLException {
+  private static Connection getConn() throws Exception {
+    try {
     if (conn == null || conn.isClosed()) {
       Class.forName(JDBC_DRIVER);
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
       initVariables();
+    }
+    } catch (Exception e) {
+      logger.error("Error", e);
+      throw e;
     }
 
     return conn;
