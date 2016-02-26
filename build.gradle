@@ -12,10 +12,6 @@ eclipse {
 	}
 }
 
-ext {
-	pangVersion='1.0.0-SNAPSHOT'
-}
-
 configurations.all {
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
@@ -24,17 +20,19 @@ repositories {
    mavenLocal()
    mavenCentral()
    maven{
-   	url "http://mini.prever.co.kr:8081/nexus/content/groups/prever-io-public-repository/"
+   	url "http://mini.prever.io:8081/nexus/content/groups/prever-io-public-repository/"
    }
 }
 
 dependencies {
 	compile ("mysql:mysql-connector-java:5.1.36")
 	
-	compile group: 'com.pangdata', name: 'pang-sdk-java', version: '1.0.0-SNAPSHOT'
+	compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
+	
+	compile group: 'com.pangdata', name: 'pang-sdk-java', version: '1.0.0-RELEASE'
 }
 
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0-RELEASE'
 
 jar {
     manifest.attributes provider: 'pangdata.com'
