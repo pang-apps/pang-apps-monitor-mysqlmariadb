@@ -231,7 +231,7 @@ public class MysqlMariaDBMonitor {
       long curBytes_in = Long.parseLong(value);
       if (bytes_in > -1) {
         values.put(TRAFFIC_IN, rountTo2decimal(((curBytes_in - bytes_in) / 1024)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       bytes_in = curBytes_in;
     } catch (Exception e) {
@@ -244,7 +244,7 @@ public class MysqlMariaDBMonitor {
       long curBytes_out = Long.parseLong(value);
       if (bytes_out > -1) {
         values.put(TRAFFIC_OUT, rountTo2decimal(((curBytes_out - bytes_out) / 1024)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       bytes_out = curBytes_out;
     } catch (Exception e) {
@@ -259,7 +259,7 @@ public class MysqlMariaDBMonitor {
       if (queries > -1) {
 
         values.put(QUERIES_PER_SECOND, rountTo2decimal((curQueries - queries)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       queries = curQueries;
     } catch (Exception e) {
@@ -272,7 +272,7 @@ public class MysqlMariaDBMonitor {
       int curReads = Integer.parseInt(value);
       if (reads > -1) {
         values.put(READS_PER_SECOND, rountTo2decimal((curReads - reads)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       reads = curReads;
     } catch (Exception e) {
@@ -285,7 +285,7 @@ public class MysqlMariaDBMonitor {
       int curWrites = Integer.parseInt(value);
       if (writes > -1) {
         values.put(WRITES_PER_SECOND, rountTo2decimal((curWrites - writes)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       writes = curWrites;
     } catch (Exception e) {
@@ -319,7 +319,7 @@ public class MysqlMariaDBMonitor {
     return conn;
   }
 
-  private static double rountTo2decimal(double d) {
+  public static double rountTo2decimal(double d) {
     return Math.round(d * 100.0) / 100.0;
   }
 }
