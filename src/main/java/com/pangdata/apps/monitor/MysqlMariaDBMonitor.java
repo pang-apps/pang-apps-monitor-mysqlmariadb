@@ -170,7 +170,8 @@ public class MysqlMariaDBMonitor {
           try {
             if (stmt != null && !stmt.isClosed())
               stmt.close();
-          } catch (SQLException se2) {
+          } catch (Exception e2) {
+        	  logger.error("Mysql/Mariadb monitor has an error", e2);
           }
         }
       }
