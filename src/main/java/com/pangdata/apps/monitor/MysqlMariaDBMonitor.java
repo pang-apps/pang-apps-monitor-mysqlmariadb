@@ -48,6 +48,9 @@ import com.pangdata.sdk.util.PangProperties;
 public class MysqlMariaDBMonitor {
   private static final Logger logger = LoggerFactory.getLogger(MysqlMariaDBMonitor.class);
 
+  // pang-a-01.status.queries_per_second
+  // pang-a-01.jdbc.username=pangdata
+//pang-a-01.status.queries_per_second
   private static final String TRAFFIC_OUT = "traffic_out";
   private static final String TRAFFIC_IN = "traffic_in";
   private static final String QUERIES_PER_SECOND = "queries_per_second";
@@ -62,6 +65,7 @@ public class MysqlMariaDBMonitor {
   private static String DB_URL;
   private static String USER;
   private static String PASS;
+  private static String PREFIX;
 
   private static long queries;
   private static int writes;
@@ -84,6 +88,7 @@ public class MysqlMariaDBMonitor {
     DB_URL = (String) PangProperties.getProperty("jdbc.url");
     USER = (String) PangProperties.getProperty("jdbc.username");
     PASS = (String) PangProperties.getProperty("jdbc.password");
+    PREFIX = (String) PangProperties.getProperty("pang.prefix");
 
     final Map<String, String> fields = extractFields();
 
@@ -161,6 +166,10 @@ public class MysqlMariaDBMonitor {
           rs.close();
           stmt.close();
 
+          if(PREFIX != null && !PREFIX.trim().isEmpty()) {
+            values = appendPrefixToDevicenames(values, PREFIX);
+          }
+          
           prever.sendData(values);
 
         } catch (Throwable e) {
@@ -170,8 +179,7 @@ public class MysqlMariaDBMonitor {
           try {
             if (stmt != null && !stmt.isClosed())
               stmt.close();
-          } catch (Exception e2) {
-        	  logger.error("Mysql/Mariadb monitor has an error", e2);
+          } catch (SQLException se2) {
           }
         }
       }
@@ -194,6 +202,14 @@ public class MysqlMariaDBMonitor {
         }
       }
     });
+  }
+
+  private static Map<String, Object> appendPrefixToDevicenames(Map<String, Object> values, String PREFIX) {
+    Map<String, Object> prefixAppendedValues = new HashMap<String, Object>();
+    for(String key : values.keySet()) {
+      prefixAppendedValues.put(PREFIX + "_" + key, values.get(key));
+    }
+    return prefixAppendedValues;
   }
 
   private static void initVariables() {
