@@ -23,11 +23,11 @@ Very easy to install ^^.
 ##### Step 1 #####
 
 ###### Windows ######
-Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.4/pang-apps-monitor-mysqlmariadb.zip">Pang Data mysql/mariadb monitoring application</a> file and unzip it.
+Download a <a href="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.5/pang-apps-monitor-mysqlmariadb.zip">Pang Data mysql/mariadb monitoring application</a> file and unzip it.
 
 ###### Linux ######
 ``` 
-wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.4/pang-apps-monitor-mysqlmariadb.tar
+wget https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/releases/download/1.0.5/pang-apps-monitor-mysqlmariadb.tar
 tar -xvf pang-apps-monitor-mysqlmariadb.tar
 ``` 
 ##### Step 2: Configure pang.properties file #####
