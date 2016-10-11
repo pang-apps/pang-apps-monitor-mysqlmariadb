@@ -48,6 +48,9 @@ import com.pangdata.sdk.util.PangProperties;
 public class MysqlMariaDBMonitor {
   private static final Logger logger = LoggerFactory.getLogger(MysqlMariaDBMonitor.class);
 
+  // pang-a-01.status.queries_per_second
+  // pang-a-01.jdbc.username=pangdata
+//pang-a-01.status.queries_per_second
   private static final String TRAFFIC_OUT = "traffic_out";
   private static final String TRAFFIC_IN = "traffic_in";
   private static final String QUERIES_PER_SECOND = "queries_per_second";
@@ -62,6 +65,7 @@ public class MysqlMariaDBMonitor {
   private static String DB_URL;
   private static String USER;
   private static String PASS;
+  private static String PREFIX;
 
   private static long queries;
   private static int writes;
@@ -84,6 +88,7 @@ public class MysqlMariaDBMonitor {
     DB_URL = (String) PangProperties.getProperty("jdbc.url");
     USER = (String) PangProperties.getProperty("jdbc.username");
     PASS = (String) PangProperties.getProperty("jdbc.password");
+    PREFIX = (String) PangProperties.getProperty("pang.prefix");
 
     final Map<String, String> fields = extractFields();
 
@@ -161,6 +166,10 @@ public class MysqlMariaDBMonitor {
           rs.close();
           stmt.close();
 
+          if(PREFIX != null && !PREFIX.trim().isEmpty()) {
+            values = appendPrefixToDevicenames(values, PREFIX);
+          }
+          
           prever.sendData(values);
 
         } catch (Throwable e) {
@@ -170,8 +179,7 @@ public class MysqlMariaDBMonitor {
           try {
             if (stmt != null && !stmt.isClosed())
               stmt.close();
-          } catch (Exception e2) {
-        	  logger.error("Mysql/Mariadb monitor has an error", e2);
+          } catch (SQLException se2) {
           }
         }
       }
@@ -194,6 +202,14 @@ public class MysqlMariaDBMonitor {
         }
       }
     });
+  }
+
+  private static Map<String, Object> appendPrefixToDevicenames(Map<String, Object> values, String PREFIX) {
+    Map<String, Object> prefixAppendedValues = new HashMap<String, Object>();
+    for(String key : values.keySet()) {
+      prefixAppendedValues.put(PREFIX + "_" + key, values.get(key));
+    }
+    return prefixAppendedValues;
   }
 
   private static void initVariables() {
@@ -232,7 +248,7 @@ public class MysqlMariaDBMonitor {
       long curBytes_in = Long.parseLong(value);
       if (bytes_in > -1) {
         values.put(TRAFFIC_IN, rountTo2decimal(((curBytes_in - bytes_in) / 1024)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       bytes_in = curBytes_in;
     } catch (Exception e) {
@@ -245,7 +261,7 @@ public class MysqlMariaDBMonitor {
       long curBytes_out = Long.parseLong(value);
       if (bytes_out > -1) {
         values.put(TRAFFIC_OUT, rountTo2decimal(((curBytes_out - bytes_out) / 1024)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       bytes_out = curBytes_out;
     } catch (Exception e) {
@@ -260,7 +276,7 @@ public class MysqlMariaDBMonitor {
       if (queries > -1) {
 
         values.put(QUERIES_PER_SECOND, rountTo2decimal((curQueries - queries)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       queries = curQueries;
     } catch (Exception e) {
@@ -273,7 +289,7 @@ public class MysqlMariaDBMonitor {
       int curReads = Integer.parseInt(value);
       if (reads > -1) {
         values.put(READS_PER_SECOND, rountTo2decimal((curReads - reads)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       reads = curReads;
     } catch (Exception e) {
@@ -286,7 +302,7 @@ public class MysqlMariaDBMonitor {
       int curWrites = Integer.parseInt(value);
       if (writes > -1) {
         values.put(WRITES_PER_SECOND, rountTo2decimal((curWrites - writes)
-            / (double) ((rtime - time) / 1000)));
+            / ((double)(rtime - time) / 1000)));
       }
       writes = curWrites;
     } catch (Exception e) {
@@ -320,7 +336,7 @@ public class MysqlMariaDBMonitor {
     return conn;
   }
 
-  private static double rountTo2decimal(double d) {
+  public static double rountTo2decimal(double d) {
     return Math.round(d * 100.0) / 100.0;
   }
 }
