@@ -33,7 +33,7 @@ dependencies {
 	testCompile 'junit:junit:4.11'
 }
 
-version = '1.0.0-RELEASE'
+version = '1.0.5-RELEASE'
 
 jar {
     manifest.attributes provider: 'pangdata.com'
