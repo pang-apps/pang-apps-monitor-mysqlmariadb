@@ -89,6 +89,11 @@ public class MysqlMariaDBMonitor {
     USER = (String) PangProperties.getProperty("jdbc.username");
     PASS = (String) PangProperties.getProperty("jdbc.password");
     PREFIX = (String) PangProperties.getProperty("pang.prefix");
+    
+    if(PREFIX == null || PREFIX.trim().isEmpty()) {
+      logger.error("Prefix doesn't defined. Please set prefix configuration on conf/pang.properties.");
+      return;
+    }
 
     final Map<String, String> fields = extractFields();
 
