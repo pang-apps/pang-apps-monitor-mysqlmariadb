@@ -330,6 +330,7 @@ public class MysqlMariaDBMonitor {
     try {
     if (conn == null || conn.isClosed()) {
       Class.forName(JDBC_DRIVER);
+      DriverManager.setLoginTimeout(60);
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
       initVariables();
     }
