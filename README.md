@@ -93,6 +93,10 @@ pang-apps-monitor-mysqlmariadb/pang.bat
 ``` 
 pang-apps-monitor-mysqlmariadb/pang.sh
 ``` 
+Background.
+```
+nohup pang.sh > /dev/null 2>&1&
+```
 ##### Step 4: Access your devices #####
 Register your device in Pangdata.com
 
