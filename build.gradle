@@ -30,9 +30,10 @@ dependencies {
 	compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
 	
 	compile group: 'com.pangdata', name: 'pang-sdk-java', version: '1.0.0-RELEASE'
+	testCompile 'junit:junit:4.11'
 }
 
-version = '1.0.0-RELEASE'
+version = '1.0.5-RELEASE'
 
 jar {
     manifest.attributes provider: 'pangdata.com'
