@@ -1,1 +1,0 @@
-java -cp ./libs/*;./conf com.pangdata.apps.monitor.MysqlMariaDBMonitor
