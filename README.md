@@ -93,10 +93,7 @@ pang-apps-monitor-mysqlmariadb/pang.bat
 ``` 
 pang-apps-monitor-mysqlmariadb/pang.sh
 ``` 
-###### Background in Linux ######
-```
-nohup pang.sh > /dev/null 2>&1&
-```
+Process will be executed in Background.
 ##### Step 4: Access your devices #####
 Register your device in Pangdata.com
 
