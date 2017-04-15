@@ -2,6 +2,10 @@
 Mysql and Mariadb monitoring application for Traffic, Queries per second, Reads/Writes per second and more.
 You can monitor and access your database using pangdata.com cloud web service on mobile, tablet and Laptop anywhere.
 
+# Pang Data Cloud based Monitoring Service
+This application used Pangdata.com cloud service. Pangdata.com is cloud based monitoring and analysis SaaS platform. 
+You can monitor your cloud infrstructure and applications using <a href="https://github.com/pang-apps/redis-monitor/releases/latest">Pang SDK
+
 ## Screen shot
 ###### Realtime monitoring ######
 ![Realtime monitoring](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
