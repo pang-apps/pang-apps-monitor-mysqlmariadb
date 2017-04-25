@@ -5,6 +5,7 @@ You can monitor and access your database using pangdata.com cloud web service on
 # Pang Data Cloud based Monitoring Service
 This application used Pangdata.com cloud service. Pangdata.com is cloud based monitoring and analysis SaaS platform. 
 You can monitor your cloud infrstructure and applications using <a href="https://github.com/pang-apps/redis-monitor/releases/latest">Pang SDK
+![Cloud Based Monitoring](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot-cloud-monitoring.png "Cloud monitoring")
 
 ## Screen shot
 ###### Realtime monitoring ######
