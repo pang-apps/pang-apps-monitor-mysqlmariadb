@@ -10,7 +10,7 @@ You can monitor your cloud infrstructure and applications using <a href="https:/
 
 ## Screen shot
 ###### Realtime monitoring ######
-![Realtime monitoring](https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot.png "Realtime monitoring")
+<img src="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot.png" width="500" />
 
 ###### Realtime monitoring on Mobile ######
 <img src="https://github.com/pang-apps/pang-apps-monitor-mysqlmariadb/blob/master/screen-shot-2.png" width="300" />
