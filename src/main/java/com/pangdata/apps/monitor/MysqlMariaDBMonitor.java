@@ -23,7 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.pangdata.sdk.Pang;
-import com.pangdata.sdk.mqtt.PangMqtt;
+import com.pangdata.sdk.mqtt.PangMqttV2;
 import com.pangdata.sdk.util.PangProperties;
 
 // http://www.fromdual.com/innodb-variables-and-status-explained
@@ -65,7 +65,7 @@ public class MysqlMariaDBMonitor {
 
   public static void main(String[] args) throws Exception {
     // Prever must be initialized first to use prever.properties by PangProperties
-    final Pang prever = new PangMqtt();
+    final Pang prever = new PangMqttV2();
 
     JDBC_DRIVER = (String) PangProperties.getProperty("jdbc.driverClassName");
     DB_URL = (String) PangProperties.getProperty("jdbc.url");
